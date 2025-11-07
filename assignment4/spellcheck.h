@@ -9,6 +9,9 @@ struct Token {
   std::string content;
   size_t src_offset;
 
+  
+  // a template that stores where the token starts by measuring hor far begin is from source.begin()
+  // cast the distance to std::size_t
   template <typename It>
   Token(std::string& source, It begin, It end)
       : src_offset{static_cast<std::size_t>(std::distance(source.begin(), begin))},
